@@ -1,20 +1,20 @@
 //Pariya Palizban
-//poroje barname nevisi  -  faz nahai
+//Term2 (Dec 2020 - Jun 2021)
+//Final project of the “Fundamentals of Programming” course at SBU
 //-------------------------------------------------------------------
 #include <iostream>
 #include <fstream>
 #include <conio.h>
 #define r 1000
-//tavabe barname
+//Functions
 using namespace std;
-void sum(int num1[],int num2[], int result[]);//----------------------//tabe jam 
-void multiply(int num1[],int num2[], int result[]);//-----------------//tabe zarb
-void mine(int num1[],int num2[], int result[]);//---------------------//tabe menha
-void divide(int num1[],int num2[], int result[]);//-------------------//tabe taghsim
-void remainder(int num1[],int num2[], int result[]);//----------------//tabe baghimande
-void expo(int num1[],int num2[],  int result[]);//--------------------//tabe tavan
-void sqrt(char problem[]);//------------------------------------------//tabe jazr
-void mabna(int n,int ar[],int num1[],int num2[],int result[]);//------//tabe tabdil mabna--- ghabeliat ezafe barname
+void sum(int num1[],int num2[], int result[]);//----------------------//sum function
+void multiply(int num1[],int num2[], int result[]);//-----------------//multiply function
+void mine(int num1[],int num2[], int result[]);//---------------------//minuse function
+void divide(int num1[],int num2[], int result[]);//-------------------//divide function
+void remainder(int num1[],int num2[], int result[]);//----------------//remainder function
+void expo(int num1[],int num2[],  int result[]);//--------------------//power function
+void sqrt(char problem[]);//------------------------------------------//square function
 void separate_solve(char problem[]);//--------------------------------//tabe joda kardan adad va be hal bekomak tavabe digar
 void show(int result[],int p);//--------------------------------------//tabe neshan dadan adad haye barname
 void clean(char problem[]);//-----------------------------------------//tabe pak kardan fasele ha
@@ -353,71 +353,6 @@ void sqrt(char problem[])
 	{
 		show(num3,0);
 	}
-}
-//-------------------------------------------------------------------
-void mabna(int qw,int ar[],int num1[],int num2[],int result[])
-{
-	fstream o;
-	string ad="out.txt";
-	o.open(ad.c_str(),ios::app);
-	
-    int javab[r];
-    int javab_nahii[r];
-    int num1_1[r];
-
-    for(int i=0;i<r;i++)
-    {
-        num1_1[i]=num1[i];
-    }
-
-    remainder(num1,num2,javab_nahii);
-
-    ar[qw]=javab_nahii[0];
-
-    divide(num1_1 ,num2 ,javab);
-
-    for(int i=0;i<r;i++)
-    {
-        num1_1[i]=javab[i];
-    }
-
-    if(javab[0]>=num2[0])
-    {
-       qw++;
-       mabna(qw,ar,num1_1,num2,javab_nahii);
-    }
-    else
-    {
-        o<<num1_1[0];
-
-        for(int i=qw;i>=0;i--)
-        {
-            if(ar[i]<10)
-                o<<ar[i];
-            else
-            {
-              if(ar[i]==10)
-                o<<"A";
-
-              if(ar[i]==11)
-                o<<"B";
-
-              if(ar[i]==12)
-                o<<"C";
-
-              if(ar[i]==13)
-                o<<"D";
-
-              if(ar[i]==14)
-                o<<"E";
-
-              if(ar[i]==15)
-                o<<"F";
-            }
-
-        }
-
-    }
 }
 //-------------------------------------------------------------------
 void separate_solve(char problem[])
