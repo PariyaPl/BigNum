@@ -2,6 +2,10 @@
 //Term2 (Dec 2020 - Jun 2021)
 //Final project of the “Fundamentals of Programming” course at SBU
 //-------------------------------------------------------------------
+//The input is a txt file
+//In each line of the text file there must be a line given to the calculator to solve
+//For example: 9999999999999 - 59372998778
+//-------------------------------------------------------------------
 #include <iostream>
 #include <fstream>
 #include <conio.h>
@@ -15,9 +19,9 @@ void divide(int num1[],int num2[], int result[]);//-------------------//divide f
 void remainder(int num1[],int num2[], int result[]);//----------------//remainder function
 void expo(int num1[],int num2[],  int result[]);//--------------------//power function
 void sqrt(char problem[]);//------------------------------------------//square function
-void separate_solve(char problem[]);//--------------------------------//tabe joda kardan adad va be hal bekomak tavabe digar
-void show(int result[],int p);//--------------------------------------//tabe neshan dadan adad haye barname
-void clean(char problem[]);//-----------------------------------------//tabe pak kardan fasele ha
+void separate_solve(char problem[]);//--------------------------------//this function separates the numbers and identifies the operator
+void show(int result[],int p);//--------------------------------------//this function prints the result
+void clean(char problem[]);//-----------------------------------------//this function deletes the spaces
 //-------------------------------------------------------------------
 int main()
 {
